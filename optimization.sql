@@ -19,10 +19,17 @@ foreign key (department_id) references department(id)
 alter table employee
     add constraint emp_phone check (number is not null);
 
+
+
+--indexes
 create index number on employee using hash(number);
 create index department_id on employee using hash(department_id);
 create index chief_id on employee using hash(chief_id);
 create index name on employee using hash(name);
+
+
+
+
 
 insert into department (name) values ('Sales');
 insert into department (name) values ('Engineering');
